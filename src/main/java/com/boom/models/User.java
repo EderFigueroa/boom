@@ -11,19 +11,22 @@ public class User{
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
   private long id;
-  private String name;
-  private boolean isAdmin;
+  private String username;
+  private String password;
+  private boolean enabled;
+
 
   protected User() {}
   
-  public User(String name, boolean isAdmin){
-    this.name = name;
-    this.isAdmin = isAdmin;
+  public User(boolean enabled, String username, String password){
+    this.username = username;
+    this.password = password;
+    this.enabled  = enabled;
   }
 
   @Override
   public String toString() {
-    return String.format("User[id=%d, name=%s]", id, name);
+    return String.format("User[id=%d]", id);
   }
 
 }
