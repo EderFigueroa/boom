@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class HomeController{
+
   @RequestMapping("/")
   public String index(){
     System.out.println("testing");
@@ -14,7 +15,8 @@ public class HomeController{
   }
 
   @RequestMapping("/greeting")
-  public String greeting( @RequestParam(value = "name", required = false, defaultValue="World") String name, Model model){
+  public String greeting( @RequestParam(value = "name", required = false, defaultValue="World") String name,
+                          Model model){
     model.addAttribute("name", name);
     return "greeting";
   }

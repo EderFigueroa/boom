@@ -12,4 +12,5 @@ public class VideosController{
     System.out.println("testing");
     return "video";
   }
+
 }
