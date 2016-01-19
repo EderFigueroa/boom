@@ -1,4 +1,4 @@
-package com.boom.models;
+package com.boom.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
