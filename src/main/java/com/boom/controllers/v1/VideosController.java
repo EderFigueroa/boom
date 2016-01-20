@@ -1,7 +1,7 @@
-package com.boom.controllers;
+package com.boom.controllers.v1;
 
 import com.boom.model.Video;
-import com.boom.service.VideoService;
+import com.boom.service.v1.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +29,21 @@ public class VideosController{
 
   @RequestMapping(method= RequestMethod.GET)
   public List<Video> getAll() {
-    return null;
+    return videoService.findAll();
+  }
+
+  @RequestMapping(value = "{id}", method= RequestMethod.GET)
+  public Video get(@PathVariable("id") String id) {
+    return videoService.findOne(id);
+  }
+
+  @RequestMapping(value = "{id}", method= RequestMethod.DELETE)
+  public Video delete(@PathVariable("id") String id) {
+    return videoService.delete(id);
+  }
+
+  @RequestMapping(value = "{id}", method= RequestMethod.PUT)
+  public Video update(@PathVariable("id") String id, @RequestBody Video video) {
+    return videoService.update(id, video);
   }
 }

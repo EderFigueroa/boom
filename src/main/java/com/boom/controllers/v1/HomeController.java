@@ -1,4 +1,4 @@
-package com.boom.controllers;
+package com.boom.controllers.v1;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
