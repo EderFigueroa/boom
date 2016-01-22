@@ -23,8 +23,7 @@ public class VideosController{
 
   @RequestMapping(method= RequestMethod.POST)
   public ResponseEntity<Video> create(@RequestBody Video video){
-    Video newVideo = videoService.create(video);
-    return new ResponseEntity<Video>(newVideo, HttpStatus.OK);
+    return new ResponseEntity<Video>(videoService.create(video), HttpStatus.OK);
   }
 
   @RequestMapping(method= RequestMethod.GET)
